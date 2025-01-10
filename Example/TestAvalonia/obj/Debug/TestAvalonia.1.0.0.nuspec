@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>TestAvalonia</id>
+    <version>1.0.0</version>
+    <authors>TestAvalonia</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Avalonia" version="11.2.1" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Desktop" version="11.2.1" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Diagnostics" version="11.2.1" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Fonts.Inter" version="11.2.1" exclude="Build,Analyzers" />
+        <dependency id="Avalonia.Themes.Fluent" version="11.2.1" exclude="Build,Analyzers" />
+        <dependency id="CommunityToolkit.Mvvm" version="8.2.1" exclude="Build,Analyzers" />
+        <dependency id="NBit" version="1.2.0" exclude="Build,Analyzers" />
+        <dependency id="NullFX.CRC" version="1.1.10" exclude="Build,Analyzers" />
+        <dependency id="System.Device.Gpio" version="3.2.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.Ports" version="9.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\i00204768\source\repos\TestAvalonia\bin\Debug\net8.0\TestAvalonia.runtimeconfig.json" target="lib\net8.0\TestAvalonia.runtimeconfig.json" />
+    <file src="C:\Users\i00204768\source\repos\TestAvalonia\bin\Debug\net8.0\TestAvalonia.dll" target="lib\net8.0\TestAvalonia.dll" />
+  </files>
+</package>

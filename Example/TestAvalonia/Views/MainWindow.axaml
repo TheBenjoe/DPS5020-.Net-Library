@@ -1,0 +1,152 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TestAvalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TestAvalonia.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TestAvalonia"
+		Focusable="True">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<StackPanel>
+	<TabControl>
+		<TabItem Header="Manuall Set">
+			<StackPanel>
+
+				<SplitButton Name="set_splitbutton_source" Content="Source" >
+					<SplitButton.Flyout>
+						<MenuFlyout Placement="Bottom">
+							<MenuItem Header="Source A" Click="Grid_SourceA_Visible" />
+							<MenuItem Header="Source B" Click="Grid_SourceB_Visible" />
+						</MenuFlyout>
+					</SplitButton.Flyout>
+				</SplitButton>
+			<Grid Name="Grid_SourceASet" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="200,200,200" IsVisible="True">
+				
+				<TextBlock Text="U Set:" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBox Width="200" Height="1" Margin="10" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Path=SourceA.Uset, UpdateSourceTrigger=LostFocus}"/>
+				<TextBlock Text="V" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="I Set:" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBox Width="200" Height="1" Margin="10" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding SourceA.Iset, UpdateSourceTrigger=LostFocus}"/>
+				<TextBlock Text="A" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Lock:" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBox Width="200" Height="1" Margin="10" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding SourceA.Lock, UpdateSourceTrigger=LostFocus}"/>
+			
+
+
+
+
+			</Grid>
+				<Grid Name="Grid_SourceBSet" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="200,200,200" IsVisible="False">
+					<TextBlock Text="U Set:" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center"/>
+					<TextBox Width="200" Height="1" Margin="10" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Path=SourceB.Uset, UpdateSourceTrigger=LostFocus}"/>
+					<TextBlock Text="V" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center"/>
+
+					<TextBlock Text="I Set:" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center"/>
+					<TextBox Width="200" Height="1" Margin="10" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding SourceB.Iset, UpdateSourceTrigger=LostFocus}"/>
+					<TextBlock Text="A" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center"/>
+
+					<TextBlock Text="Lock:" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"/>
+					<TextBox Width="200" Height="1" Margin="10" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding SourceB.Lock, UpdateSourceTrigger=LostFocus}"/>
+					<TextBlock Text="" Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center"/>
+				</Grid>
+				
+			</StackPanel>
+		</TabItem>
+		
+		<TabItem Header="View" Margin="0,0">
+			<StackPanel>
+			<SplitButton Name="get_splitbutton_source" Content="Source" >
+				<SplitButton.Flyout>
+					<MenuFlyout Placement="Bottom">
+						<MenuItem Header="Source A" Click="Grid_SourceA_Visible" />
+						<MenuItem Header="Source B" Click="Grid_SourceB_Visible" />
+					
+					</MenuFlyout>
+				</SplitButton.Flyout>
+			</SplitButton>
+			
+			
+			<Grid Name="Grid_SourceA" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="200,200,200" IsVisible="False">
+				<TextBlock Text="U Set" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Uset}" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="I Set" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Iset}" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="A" Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="U Out" Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Uout}" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="3" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="I Out" Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Iout}" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="A" Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Power" Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Power}" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="W" Grid.Row="5" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="U In" Grid.Row="6" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Uin}" Grid.Row="6" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="6" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Lock" Grid.Row="7" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Lock}" Grid.Row="7" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="" Grid.Row="7" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Protect" Grid.Row="8" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceA.Protect}" Grid.Row="8" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="" Grid.Row="8" Grid.Column="2"  VerticalAlignment="Center"/>
+			</Grid>
+
+			<Grid Name="Grid_SourceB" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="200,200,200" IsVisible="False">
+				<TextBlock Text="U Set" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Uset}" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="I Set" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Iset}" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="A" Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="U Out" Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Uout}" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="3" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="I Out" Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Iout}" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="A" Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Power" Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Power}" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="W" Grid.Row="5" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="U In" Grid.Row="6" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Uin}" Grid.Row="6" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="V" Grid.Row="6" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Lock" Grid.Row="7" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Lock}" Grid.Row="7" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="" Grid.Row="7" Grid.Column="2"  VerticalAlignment="Center"/>
+
+				<TextBlock Text="Protect" Grid.Row="8" Grid.Column="0"  VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding SourceB.Protect}"  Grid.Row="8" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+				<TextBlock Text="" Grid.Row="8" Grid.Column="2"  VerticalAlignment="Center"/>
+			</Grid>
+		</StackPanel>
+		</TabItem>
+		</TabControl>
+		
+		<Grid RowDefinitions="Auto" ColumnDefinitions="200,200">
+			<Button Grid.Row="0" Grid.Column="1" Content="Refresh" Command="{Binding refreshValues}"/>
+		</Grid>
+	</StackPanel>
+</Window>
